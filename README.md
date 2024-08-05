@@ -4,7 +4,7 @@
 
 ## Hosted Version of the Project:
 
-[mlcToDoPrjName](https://mlcToDoPrjName.vercel.app/)
+[theFlurn Pokedex Project](https://theflurn-pokedex-project.vercel.app/)
 
 ## Objectives
 
