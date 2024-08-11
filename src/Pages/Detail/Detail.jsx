@@ -65,11 +65,12 @@ function a11yProps(index) {
 export default function Detail() {
   const navigate = useNavigate();
   const whichPokemonGameEdition = "firered-leafgreen";
-  const { pokemonID } = useParams();
+  let { pokemonID } = useParams();
   const [statePokemonObj, setStatePokemonObj] = useState(null);
   useEffect(() => {
     document.title = statePokemonObj?.name;
   }, [statePokemonObj]);
+
   useEffect(() => {
     async function makeApiCall() {
       if (pokemonID) {
@@ -264,6 +265,15 @@ export default function Detail() {
     saveToLocalStorage();
   }, [stateBookmarkedPokemons]);
 
+  function getPokemonIdFromUrl(url) {
+    const regex = /https:\/\/.*?pokemon-species\/([^\/]+)\//;
+    const match = url.match(regex);
+    if (match[1]) {
+      return match[1];
+    } else {
+      return null;
+    }
+  }
   return (
     <div className="p-[1rem] flex flex-col items-center">
       <div
@@ -396,6 +406,8 @@ export default function Detail() {
           <ul className="flex flex-col gap-[.5rem] items-center">
             {statePokemonEvolutionObj.length > 0 &&
               statePokemonEvolutionObj.map((obj) => {
+                const evolutionPokemonId = getPokemonIdFromUrl(obj.url);
+
                 return (
                   <li key={obj.name} className="flex flex-col gap-[.5rem]">
                     {obj.level && (
@@ -417,7 +429,14 @@ export default function Detail() {
                     <img
                       src={obj.img}
                       className="w-[12rem] h-[12rem] cursor-pointer"
-                      onClick={() => navigate(`/detail/${id}`)}
+                      onClick={async () => {
+                        if (evolutionPokemonId) {
+                          navigate(`/detail/${evolutionPokemonId}`);
+                          pokemonID = evolutionPokemonId;
+
+                          setStatePokemonObj(await fetchPokemonById(pokemonID));
+                        }
+                      }}
                     />
                   </li>
                 );
