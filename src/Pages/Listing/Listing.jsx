@@ -53,8 +53,6 @@ export default function Listing() {
         statePokemonSpeciesCurrentGeneration.current =
           response?.pokemon_species;
       }
-
-      hideLoading();
     }
   }
 
@@ -89,6 +87,7 @@ export default function Listing() {
           return response;
         })
       );
+      hideLoading();
     } else {
       setStateLoading(true);
       while (
@@ -133,7 +132,6 @@ export default function Listing() {
     const bk = refPokemonObjs.current;
     refPokemonObjs.current = [...bk, ...fetchedPokemonObjs];
     setStatePokemonObjs([...bk, ...fetchedPokemonObjs]);
-    hideLoading();
   }
 
   async function getAllThePokemonNoFilter() {
