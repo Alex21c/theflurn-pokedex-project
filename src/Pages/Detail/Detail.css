@@ -1,0 +1,27 @@
+@media screen and (max-width: 572px) {
+  div#divWrapperDetail,
+  #wrapperTabs {
+    width: 100%;
+  }
+}
+
+@media screen and (max-width: 458px) {
+  #tabsNames > div > div {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (max-width: 436px) {
+  img#imgPokemon {
+    width: 12rem;
+    left: 0rem;
+  }
+}
+
+@media screen and (max-width: 366px) {
+  div#divWrapperDetail,
+  #wrapperTabs {
+    min-width: 21rem;
+  }
+}

@@ -1,0 +1,11 @@
+@media screen and (max-width: 480px) {
+  input#inputSearch,
+  button,
+  button > i {
+    width: 100%;
+  }
+  form {
+    flex-direction: column;
+    width: 19rem;
+  }
+}

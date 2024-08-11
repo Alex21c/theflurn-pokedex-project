@@ -1,0 +1,20 @@
+@media screen and (max-width: 1024px) {
+  div#divGridListingPage {
+    grid-template-columns: 1fr 1fr;
+    width: 41rem;
+    /* background: yellow; */
+  }
+}
+@media screen and (max-width: 676px) {
+  div#divGridListingPage {
+    grid-template-columns: 1fr;
+    width: 20rem;
+    /* background: yellow; */
+  }
+}
+
+@media screen and (max-width: 464px) {
+  div#divFiltersWrappper {
+    flex-direction: column;
+  }
+}
