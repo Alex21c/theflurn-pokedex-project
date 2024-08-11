@@ -11,16 +11,15 @@ build a Pokédex using a [Poke API](https://pokeapi.co/) to fetch the data.
 
 ## Features 
 ### Search Page 
-+ Create a search page that accepts a Pokemon name to search for. On hitting search, make an API call to the search endpoint.
-+ Show a loading when the API is in progress and stop the loading when the API is successful or throws an error. Display the error if there is an error message.
++ Created a search page that accepts a Pokemon name to search for. On hitting search, make an API call to the search endpoint.
++ Shows a loading when the API is in progress and stop the loading when the API is successful or throws an error. Display the error if there is an error message.
 
 ### Listing page 
-+ If the API returns successfully show all the Pokemon that are returned in the API on this page. 
++ If the API returns successfully shows all the Pokemon that are returned in the API on this page. 
 + Navigate to the listing page only after a successful API response. This page should show the images of the movie as well as the title of the movie in a grid format. 
-+ The listing page should be infinite scrollable, as the user scrolls, load more Pokemon using the API. By default, the search API gets 10 items per page.
-+ Please make sure the listing page remains functional even after loading a lot of movies when you keep scrolling. 
-+ Also, provide options to filter the results by abilities, 
-characteristics, group, habitat, location, Species etc.
++ The listing page is infinite scrollable, as the user scrolls, load more Pokemon using the API. By default, the search API gets 10 items per page.
++ listing page remains functional even after loading a lot of movies when you keep scrolling. 
++ provided options to filter the results by abilities, characteristics, group, habitat, location, Species etc.
 
 ### Details Page 
 + Details screen opens up on tapping on one of the Pokemon on the listing screen. 
